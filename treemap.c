@@ -250,11 +250,11 @@ Pair * nextTreeMap(TreeMap * tree)
     TreeNode *aux = tree->current;
 
     if (aux->right == NULL)
-        return NULL;
+        return aux->pair;
 
     aux = minimum(aux->right);
 
-    //tree->current = aux;
+    tree->current = aux;
 
     return aux->pair;
 }
