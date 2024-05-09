@@ -202,8 +202,7 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key)
 {
-    TreeNode *aux = (TreeNode *)malloc(sizeof(TreeNode));
-    aux = tree->root;
+    TreeNode *aux = tree->root;
 
     while (aux != NULL)
     {
@@ -213,7 +212,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
             return aux->pair;
         }
         
-        if (key < aux->pair->key)
+        else if (key < aux->pair->key)
         {
             if (aux->left == NULL)
                 return NULL;
@@ -221,7 +220,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
             aux = aux->left;
         }
 
-        if (key > aux->pair->key)
+        else if (key > aux->pair->key)
         {
             if (aux->right == NULL)
                 return NULL;
