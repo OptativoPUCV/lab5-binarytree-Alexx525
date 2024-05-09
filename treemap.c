@@ -255,7 +255,9 @@ Pair * nextTreeMap(TreeMap * tree)
     if (aux->right == NULL)
         return NULL;
 
-    tree->current = aux->right;
+    aux = minimum(aux->right);
 
-    return aux->right->pair;
+    tree->current = aux;
+
+    return aux->pair;
 }
