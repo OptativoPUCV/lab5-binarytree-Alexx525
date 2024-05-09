@@ -141,6 +141,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
         if (is_equal(tree, aux->pair->key, key))
             return aux->pair;
     }
+    return NULL;
 }
 
 
