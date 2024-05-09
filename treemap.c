@@ -249,15 +249,16 @@ Pair * nextTreeMap(TreeMap * tree)
 {
     TreeNode *aux = tree->current;
 
-    if (aux->right == NULL)
+    if (aux->right == NULL || aux == NULL)
         return NULL;
 
-    aux = aux->right;
-
-    if (aux->left == NULL)
-        return aux->pair;
-        
-    aux = minimum(aux);
+    if (aux->parent->left == aux && aux->right == NULL)
+    {
+        tree->current = aux->parent;
+        return aux->parent->pair;
+    }
+    
+    aux = minimum(aux->right);
 
     tree->current = aux;
 
