@@ -95,8 +95,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
 
 TreeNode * minimum(TreeNode * x)
 {
-    TreeNode *aux = (TreeNode *)malloc(sizeof(TreeNode));
-    aux = x;
+    TreeNode *aux = x;
 
     if (aux->left == NULL)
         return NULL;
@@ -239,9 +238,7 @@ Pair * upperBound(TreeMap * tree, void* key)
 
 Pair * firstTreeMap(TreeMap * tree)
 {
-    TreeNode *aux = (TreeNode *)malloc(sizeof(TreeNode));
-
-    aux = tree->root;
+    TreeNode *aux = tree->root;
 
     while (aux->left != NULL)
         aux = aux->left;
@@ -253,9 +250,7 @@ Pair * firstTreeMap(TreeMap * tree)
 
 Pair * nextTreeMap(TreeMap * tree)
 {
-    TreeNode *aux = (TreeNode *)malloc(sizeof(TreeNode));
-
-    aux = tree->current;
+    TreeNode *aux = tree->current;
 
     if (aux->right == NULL)
         return NULL;
