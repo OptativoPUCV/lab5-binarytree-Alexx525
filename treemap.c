@@ -240,17 +240,22 @@ Pair * upperBound(TreeMap * tree, void* key)
     if (aux == NULL)
         return NULL;
 
-    /*while (aux->left != NULL)
+    while (aux->left != NULL)
         aux = aux->left;
 
     tree->current = aux;
 
     while (tree->lower_than(tree->current->pair->key, key))
+    {
+        if (nextTreeMap(tree) == NULL)
+            return NULL;
+        
         nextTreeMap(tree);
-
-    return tree->current->pair;*/
+    }
     
-    while (aux != NULL)
+    return tree->current->pair;
+    
+    /*while (aux != NULL)
     {
         if (aux->left == NULL && aux->right == NULL)
         {
@@ -284,8 +289,9 @@ Pair * upperBound(TreeMap * tree, void* key)
 
             aux = aux->right;
         }
-    }
+    }*/
 
+    
     return NULL;
 }
 
