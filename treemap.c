@@ -241,9 +241,19 @@ Pair * upperBound(TreeMap * tree, void* key)
     {
         if (aux->left == NULL && aux->right == NULL)
         {
-            
-            tree->current = aux;
-            return aux->pair;
+            if (tree->lower_than(key, aux->pair->key))
+            {
+                tree->current = aux;
+                par = nextTreeMap(tree);
+
+                return par;
+            }
+
+            else
+            {
+                tree->current = aux;
+                return aux->pair;
+            }
         }
 
         else if (tree->lower_than(key, aux->pair->key))
